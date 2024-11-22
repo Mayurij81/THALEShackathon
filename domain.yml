@@ -1,0 +1,133 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_cybersecurity_tips
+  - report_phishing
+  - ask_about_passwords
+  - ask_about_mfa
+  - ask_about_malware
+  - ask_about_data_privacy
+  - ask_about_firewall
+  - ask_about_encryption
+  - report_data_breach
+
+entities:
+  - email
+  - website
+  - password
+
+slots:
+  email:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: email
+  website:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: website
+  password:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: password
+
+responses:
+  utter_greet:
+    - text: |
+        Hello! I'm Dossier-Defender here to assist you with any questions or concerns about cybersecurity. 
+        Whether you need tips to stay safe online, want to learn about best practices, 
+        or have a specific concern, feel free to ask!
+
+  utter_goodbye:
+    - text: |
+        Thank you for chatting with me! Remember to stay vigilant online—use strong passwords, 
+        enable multi-factor authentication, and always double-check links before clicking. 
+        Goodbye and take care! Thank you from THALES!
+
+  utter_ask_cybersecurity_tips:
+    - text: |
+        Cybersecurity is essential to staying safe in today's digital world. Here are some tips:
+        - Use unique, strong passwords for every account.
+        - Enable multi-factor authentication (MFA) on critical accounts.
+        - Avoid clicking on suspicious links or downloading unknown attachments.
+        - Regularly update your devices and software to fix vulnerabilities.
+        - Use a reliable antivirus program and a firewall to protect your system.
+
+  utter_report_phishing:
+    - text: |
+        Phishing scams are attempts to steal your personal information. If you suspect phishing:
+        - Do not click on any links or download attachments in suspicious emails.
+        - Verify the sender's email address carefully.
+        - Report the phishing attempt to your IT department or forward it to [cybersecurity@domain.com](mailto:cybersecurity@domain.com).
+        - You can also report phishing emails to organizations like CERT or your email provider.
+
+  utter_ask_about_passwords:
+    - text: |
+        Password security is the foundation of good cybersecurity. Here’s how you can improve yours:
+        - Create passwords with at least 12 characters, including uppercase and lowercase letters, numbers, and special symbols.
+        - Avoid using personal information like names or birthdays.
+        - Use a password manager to generate and store strong passwords securely.
+        - Change your passwords regularly, especially if you suspect a breach.
+        - Never reuse the same password across multiple accounts.
+
+  utter_ask_about_mfa:
+    - text: |
+        Multi-factor authentication (MFA) adds an extra layer of security to your accounts. Here’s why it's important:
+        - It requires something you know (password) and something you have (phone or authentication app).
+        - It protects you even if your password is compromised.
+        - You can enable MFA on email, social media, banking, and other critical accounts.
+        - Authenticator apps like Google Authenticator or Microsoft Authenticator are highly secure options.
+
+  utter_ask_about_malware:
+    - text: |
+        Malware is malicious software designed to harm or exploit devices. To protect against malware:
+        - Use a trusted antivirus program and keep it updated.
+        - Avoid downloading files or apps from unverified sources.
+        - Be cautious about clicking on pop-ups or ads that seem too good to be true.
+        - Keep your operating system and software up to date to patch vulnerabilities.
+        - Regularly back up your data in case of an attack.
+
+  utter_ask_about_data_privacy:
+    - text: |
+        Data privacy involves protecting your personal and sensitive information online. Here are some tips:
+        - Share as little personal information as possible on social media.
+        - Use privacy settings to control who can see your content.
+        - Avoid using public Wi-Fi for sensitive tasks like online banking.
+        - Use encryption tools for communications and sensitive data storage.
+        - Regularly review the privacy policies of the apps and services you use.
+
+  utter_ask_about_firewall:
+    - text: |
+        A firewall is your first line of defense against unauthorized access. Here's how it helps:
+        - It monitors and controls incoming and outgoing network traffic based on security rules.
+        - It can block malicious traffic and prevent certain attacks.
+        - Always ensure your firewall is enabled on your device.
+        - For advanced protection, use both software and hardware firewalls.
+
+  utter_ask_about_encryption:
+    - text: |
+        Encryption is a process that secures your data by converting it into a code that only authorized users can decode. Here's why it's crucial:
+        - It protects your sensitive data, such as financial details and personal communications.
+        - Always use encrypted tools and services, such as HTTPS websites and encrypted messaging apps.
+        - Enable full-disk encryption on your devices for additional security.
+        - Remember, encrypted data is much harder for hackers to exploit.
+
+  utter_report_data_breach:
+    - text: |
+        Data breaches can be alarming, but quick action can minimize the damage:
+        - Change the passwords of affected accounts immediately and enable MFA.
+        - Monitor your accounts for any unusual activity.
+        - Notify the affected service provider or organization about the breach.
+        - If sensitive financial data is exposed, alert your bank and consider freezing your credit.
+        - Stay updated on the breach and follow guidance from the organization involved.
+
+  utter_default:
+    - text: |
+        I'm sorry, I couldn't understand your question. Could you please rephrase or provide more details? 
+        I'm here to help with anything related to cybersecurity!
+
+actions: []
