@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Awareness Chatbot</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    
+    #chat-container {
+      width: 400px;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+   
+    #chat-header {
+      background-color: #0078d7;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+
+    #chat-body {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    
+    .message {
+      max-width: 80%;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .user-message {
+      background-color: #e1f5fe;
+      align-self: flex-end;
+    }
+
+    .bot-message {
+      background-color: #e8f5e9;
+      align-self: flex-start;
+    }
+
+
+    
+    #chat-footer {
+      display: flex;
+      padding: 10px;
+      gap: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    #send-button {
+      background-color: #0078d7;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    #send-button:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="chat-header">
+      <h2>Cybersecurity Bot</h2>
+    </div>
+    <div id="chat-body">
+      <div id="messages"></div>
+    </div>
+    <div id="chat-footer">
+      <input type="text" id="user-input" placeholder="Type a message..." />
+      <button id="send-button">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const userInput = document.getElementById("user-input");
+    const sendButton = document.getElementById("send-button");
+    const messages = document.getElementById("messages");
+
+    const rasaServerUrl = "http://localhost:5005/webhooks/rest/webhook"; 
+
+    // Function to add messages to the chat
+    function addMessage(content, sender = "user") {
+      const message = document.createElement("div");
+      message.className = sender === "user" ? "message user-message" : "message bot-message";
+      message.textContent = content;
+      messages.appendChild(message);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    // Event listener for sending messages
+    sendButton.addEventListener("click", async () => {
+      const message = userInput.value.trim();
+      if (!message) return;
+
+      addMessage(message, "user");
+      userInput.value = "";
+
+      // Send the message to the Rasa server
+      try {
+        const response = await fetch(rasaServerUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sender: "user", message }),
+        });
+
+        const data = await response.json();
+        if (data && data.length) {
+          data.forEach((reply) => addMessage(reply.text, "bot"));
+        } else {
+          addMessage("I'm sorry, I didn't understand that.", "bot");
+        }
+      } catch (error) {
+        console.error("Error communicating with the bot:", error);
+        addMessage("Unable to connect to the bot server. Please try again later.", "bot");
+      }
+    });
+
+    // Press Enter to send messages
+    userInput.addEventListener("keypress", (event) => {
+      if (event.key === "Enter") {
+        sendButton.click();
+      }
+    });
+  </script>
+</body>
+</html>
