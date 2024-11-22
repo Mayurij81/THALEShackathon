@@ -44,7 +44,7 @@ For testing and debugging:
 
 rasa interactive
 6. Integrate the Chatbot
-Use the provided index.html file to integrate the chatbot into your website, or follow Rasa’s guides to connect to other platforms like Slack or Telegram.
+Use the provided index.html file to integrate the chatbot into your website, or follow Rasa’s guides to connect to other platforms.
 
 Files in the Project
 domain.yml: Defines intents, entities, responses, and configuration for the chatbot.
@@ -60,29 +60,8 @@ index.html: A simple custom-built chat interface for integrating the bot into we
 README.md: This documentation.
 
 
-How to Use the Chatbot
 
-Sample Conversations
-
-Greeting
-
-Copy code
-
-User: Hi
-Bot:  Hello! I'm Dossier-Defender here to assist you with any questions or concerns about cybersecurity. 
-        Whether you need tips to stay safe online, want to learn about best practices, 
-        or have a specific concern, feel free to ask!
-
-Ask for Tips
-
-
-User: Can you give me some cybersecurity tips?
-Bot: Sure! Use strong passwords, enable MFA, avoid clicking on suspicious links, and be cautious about public Wi-Fi.
-Report a Phishing Attempt
-
-
-User: I received a suspicious email. What should I do?
-Bot: If you suspect phishing, report it to your IT department or forward the email to cybersecurity@domain.com.
+![Screenshot (51)](https://github.com/user-attachments/assets/6fd155ab-281f-4f03-8f29-635e295ed6d7)
 
 
 
