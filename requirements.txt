@@ -1,0 +1,24 @@
+# Core Rasa dependencies
+rasa==3.0.9  # Replace with your desired Rasa version
+
+# Additional libraries for Rasa
+rasa-sdk==3.0.9  # For action server
+
+# Natural Language Processing
+spacy==3.2.0  # Language processing
+tensorflow==2.11.0  # For machine learning models
+torch==2.0.1  # Optional, required if using PyTorch-based Rasa pipeline
+
+# For web deployment and APIs
+flask==2.3.2  # Lightweight web framework
+flask-cors==3.0.10  # For handling Cross-Origin Resource Sharing (CORS)
+
+# Development tools
+pydot==1.4.2  # For visualizing stories
+pytest==7.4.2  # For testing
+
+# Optional: If you plan to use YAML validation or other utilities
+pyyaml==6.0  # YAML parsing
+
+# Optional: If you're using spaCy with a specific language model
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.2.0/en_core_web_sm-3.2.0.tar.gz 
