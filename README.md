@@ -23,26 +23,39 @@ Setup Instructions
 
 git clone (https://github.com/Mayurij81/THALEShackathon).git
 cd cybersecurity-chatbot
+
+
 2. Install Dependencies
 
-Ensure you have Python 3.8+ and pip installed. Then, run:
+Ensure you have Python 3.8+ and pip installed. 
+Then, run:
 
 
 pip install -r requirements.txt
+
+
+
 3. Train the Chatbot
 To train the model:
 
 rasa train
+
+
 4. Run the Rasa Server
 Start the Rasa action server and core:
 
 
 rasa run --enable-api
+
+
+
 5. (Optional) Run Rasa in Interactive Mode
 For testing and debugging:
 
 
 rasa interactive
+
+
 6. Integrate the Chatbot
 Use the provided index.html file to integrate the chatbot into your website, or follow Rasa’s guides to connect to other platforms.
 
