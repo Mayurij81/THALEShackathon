@@ -1,0 +1,57 @@
+version: "3.1"
+
+stories:
+  - story: greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: ask cybersecurity tips
+    steps:
+      - intent: ask_cybersecurity_tips
+      - action: utter_ask_cybersecurity_tips
+
+  - story: report phishing
+    steps:
+      - intent: report_phishing
+      - action: utter_report_phishing
+
+  - story: ask about passwords
+    steps:
+      - intent: ask_about_passwords
+      - action: utter_ask_about_passwords
+
+  - story: ask about MFA
+    steps:
+      - intent: ask_about_mfa
+      - action: utter_ask_about_mfa
+
+  - story: ask about malware
+    steps:
+      - intent: ask_about_malware
+      - action: utter_ask_about_malware
+
+  - story: ask about data privacy
+    steps:
+      - intent: ask_about_data_privacy
+      - action: utter_ask_about_data_privacy
+
+  - story: ask about firewalls
+    steps:
+      - intent: ask_about_firewall
+      - action: utter_ask_about_firewall
+
+  - story: ask about encryption
+    steps:
+      - intent: ask_about_encryption
+      - action: utter_ask_about_encryption
+
+  - story: report data breach
+    steps:
+      - intent: report_data_breach
+      - action: utter_report_data_breach
