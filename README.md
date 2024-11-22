@@ -87,12 +87,21 @@ Bot: If you suspect phishing, report it to your IT department or forward the ema
 
 
 Future Enhancements
+
 Machine Learning: Improve intent recognition with additional training data.
+
 Multilingual Support: Expand the bot to support multiple languages.
+
 Advanced Security Checks: Integrate APIs for real-time URL or email analysis.
+
+
+
 Contributing
 Contributions are welcome! Follow these steps:
 
+
 Fork the repository.
+
 Create a new branch for your feature or bug fix.
+
 Submit a pull request with a detailed description of your changes.
