@@ -52,11 +52,17 @@ Use the provided index.html file to integrate the chatbot into your website, or 
 
 Files in the Project
 domain.yml: Defines intents, entities, responses, and configuration for the chatbot.
+
 data/nlu.yml: Contains examples of user inputs for training the chatbot.
+
 data/stories.yml: Defines conversation flows and expected user-bot interactions.
+
 rules.yml: Specifies chatbot behavior for specific scenarios.
+
 index.html: A simple custom-built chat interface for integrating the bot into websites.
+
 README.md: This documentation.
+
 
 How to Use the Chatbot
 Sample Conversations
