@@ -1,6 +1,6 @@
 Our Idea Solution Prototype:
 DOSSIER-DEFENDER
-This project is a chatbot designed to enhance cybersecurity awareness. Built using Rasa, the chatbot helps users learn about various aspects of cybersecurity, including phishing attacks, strong password practices, multi-factor authentication (MFA), malware, data privacy, encryption, and more. It provides tips, answers frequently asked questions, and enables users to report issues such as phishing or data breaches.
+This project is a chatbot designed to enhance cybersecurity awareness. Built using Rasa, the chatbot helps users learn about various aspects of cybersecurity, including phishing attacks, strong password practices, multi-factor authentication (MFA), malware, data privacy, encryption, and more. It provides tips, answers frequently asked questions, and enables users to report issues such as phishing or data breaches. 
 As the THALES website does not have a chatbot as of 22nd November,2024 our ideation also gives a small suggestion :)
 
 
@@ -21,7 +21,7 @@ Setup Instructions
 1. Clone the Repository
 
 
-git clone [https://github.com/yourusername/cybersecurity-chatbot](https://github.com/Mayurij81/THALEShackathon).git
+git clone (https://github.com/Mayurij81/THALEShackathon).git
 cd cybersecurity-chatbot
 2. Install Dependencies
 
@@ -63,8 +63,7 @@ README.md: This documentation.
 
 
 
-![Uploading Screenshot (52).png…]()
-
+![Screenshot (52)](https://github.com/user-attachments/assets/d2d02057-33dd-4f65-9071-f186eb80cdc0)
 
 Future Enhancements
 
@@ -77,6 +76,7 @@ Advanced Security Checks: Integrate APIs for real-time URL or email analysis.
 
 
 Contributing
+
 Contributions are welcome! Follow these steps:
 
 
